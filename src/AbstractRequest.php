@@ -3,6 +3,7 @@
 namespace Dmgctrlr\LaraOsrm;
 
 use Dmgctrlr\LaraOsrm\Responses\MatchServiceResponse;
+use Dmgctrlr\LaraOsrm\Responses\NearestServiceResponse;
 use GuzzleHttp\Client;
 
 use Dmgctrlr\LaraOsrm\Responses\RouteServiceResponse;
@@ -44,6 +45,9 @@ abstract class AbstractRequest
                 break;
             case 'trip':
                 $response = new TripServiceResponse($curlResponse);
+                break;
+            case 'nearest':
+                $response = new NearestServiceResponse($curlResponse);
                 break;
             default:
                 throw new \Exception('I cannot handle this service type yet: ' . $this->service);

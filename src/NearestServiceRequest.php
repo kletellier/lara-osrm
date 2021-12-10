@@ -7,8 +7,7 @@
  */
 
 namespace Dmgctrlr\LaraOsrm;
-
-
+ 
 class NearestServiceRequest extends BaseServiceRequest
 {
     /**
@@ -28,7 +27,7 @@ class NearestServiceRequest extends BaseServiceRequest
     public function setCoordinates(array $coordinates): BaseServiceRequest
     {
         // nearest can only have 1, so wrap the lat/lon
-        $this->coordinates = [$coordinates];
+        $this->coordinates = $coordinates;
         return $this;
     }
 
